@@ -1,0 +1,30 @@
+{
+    "name": "x.import",
+    "version": "1.0.0",
+    "description": "在css,js,html文件中导入其他文件，import other files in css,js,html files",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ihaiker/x.imports.git"
+    },
+    "keywords": [
+        "import",
+        "gulp"
+    ],
+    "author": "haiker",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/ihaiker/x.imports/issues"
+    },
+    "homepage": "https://github.com/ihaiker/x.imports#readme",
+    "dependencies": {
+        "event-stream": "^4.0.1",
+        "fs": "^0.0.1-security",
+        "gulp-util": "^3.0.8",
+        "path": "^0.12.7",
+        "sync-request": "^6.0.0"
+    }
+}
