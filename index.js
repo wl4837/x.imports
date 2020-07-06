@@ -27,6 +27,12 @@ function getImport(ext, contents, dirname) {
         } else {
             filepath = path.join(dirname, match[2]);
         }
+        if ( !fs.existsSync(filepath) ) {
+            filepath = path.join(path.resolve(''),match[2]);
+            if ( !fs.existsSync(filepath) ) {
+                return undefined
+            }
+        }
         return {
             matchText: match[0],
             index: match.index,
