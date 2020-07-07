@@ -1,8 +1,11 @@
 # x.import-pro
-添加针对项目绝对路径支持
-添加 html 内支持 javascript css 样式文件引入
-修复 js css 正则表达式 匹配错误问题
-添加 文件未找到 提示错误显示
+
+1. 添加针对项目绝对路径支持
+2. 添加 html 内支持 javascript css 样式文件引入
+3. 修复 js css 正则表达式 匹配错误问题
+4. 添加 文件未找到 提示错误显示
+
+## 项目基于 x.import 修复部分问题 
 
 `x.import-pro` exports a method for the `gulp`.
 
