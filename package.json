@@ -1,6 +1,6 @@
 {
     "name": "x.import-pro",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "在css,js,html文件中导入其他文件，import other files in css,js,html files",
     "main": "index.js",
     "scripts": {
