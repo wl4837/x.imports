@@ -25,8 +25,8 @@ function getImport(ext, contents, dirname) {
     /* 匹配 HTML 中的 javascript */
     if ( !match ) {
         switch ( ext ) {
-            case "html": var match = /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?.*/g.exec(contents); break;
-            case "htm": var match = /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?.*/g.exec(contents); break;
+            case "html": match = /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?.*/g.exec(contents); break;
+            case "htm": match = /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?.*/g.exec(contents); break;
         }
     }
 
