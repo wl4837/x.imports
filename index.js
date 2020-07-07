@@ -30,6 +30,7 @@ function getImport(ext, contents, dirname) {
         if ( !fs.existsSync(filepath) ) {
             filepath = path.join(path.resolve(''),match[2]);
             if ( !fs.existsSync(filepath) ) {
+                console.log("File not found "+filepath);
                 return undefined
             }
         }
