@@ -5,9 +5,10 @@ var gutil = require('gulp-util');
 var request = require('sync-request');
 
 var patterns = {
-    html: /([<][!][-]{2}).?import[(]?.?["'](.*)["'].?[)]?.?[-]{2}[>]/g,
-    js: /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?/g,
-    css: /([\/]{2}|[\/][*]).?import[(]?.?["'](.*)["'].?[)]?([*][\/])?/g,
+    html: /([<][!][-]{2}).?import[(]?.?["'](.*)["'].?[);]?.?[-]{2}[>]/g,
+    htm: /([<][!][-]{2}).?import[(]?.?["'](.*)["'].?[);]?.?[-]{2}[>]/g,
+    js: /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?.*/g,
+    css: /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?.*/g,
     yaml: /([ \t]*)[-][ ]?import[:][ ]*["'](.*)["']/g,
     yml: /([ \t]*)[-][ ]?import[:][ ]*["'](.*)["']/g,
     json: /([ \t]*)[-][ ]?import[:][ ]*["'](.*)["']/g
@@ -20,6 +21,15 @@ var getExtension = function (p) {
 function getImport(ext, contents, dirname) {
     patterns[ext].lastIndex = 0; // OH lastIndex - how I HATE you.
     var match = patterns[ext].exec(contents);
+
+    /* 匹配 HTML 中的 javascript */
+    if ( !match ) {
+        switch ( ext ) {
+            case "html": var match = /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?.*/g.exec(contents); break;
+            case "htm": var match = /([\/]{2}|[\/][*]).?import.?[(]?.?["'](.*)["'].?[)]?[;]?.*?(\n[*][\/])?.*/g.exec(contents); break;
+        }
+    }
+
     if (match) {
         var filepath;
         if (match[2].startsWith("http://") || match[2].startsWith("https://")) {
