@@ -1,18 +1,22 @@
-# x.import
+# x.import-pro
+添加针对项目绝对路径支持
+添加 html 内支持 javascript css 样式文件引入
+修复 js css 正则表达式 匹配错误问题
+添加 文件未找到 提示错误显示
 
-`x.import` exports a method for the `gulp`.
+`x.import-pro` exports a method for the `gulp`.
 
 ## Installation
 
 ```shell
-$ npm install x.import --save
+$ npm install x.import-pro --save
 ```
 
 ## Usage
 
 ```javascript
 var gulp = require('gulp');
-gulp.import = require('x.import');
+gulp.import = require('x.import-pro');
 ```
 
 
