@@ -1,6 +1,6 @@
 {
     "name": "x.import",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "description": "在css,js,html文件中导入其他文件，import other files in css,js,html files",
     "main": "index.js",
     "scripts": {
